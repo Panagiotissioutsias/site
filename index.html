@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMES AND MORE | Premier Greek Hospitality & Dining</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #002d72;
+            --accent-gold: #d4af37;
+            --bg-light: #fdfdfd;
+            --text-dark: #1a1a1a;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; line-height: 1.6; color: var(--text-dark); background-color: var(--bg-light); }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* 1. HERO SCREEN */
+        .hero { 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            background: linear-gradient(rgba(0, 45, 114, 0.7), rgba(0, 45, 114, 0.4)), 
+                        url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=2000') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+        .hero-content { width: 100%; }
+        .hero h1 { font-size: 4.5rem; margin-bottom: 20px; letter-spacing: 2px; }
+        .hero p { font-size: 1.5rem; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; color: var(--accent-gold); }
+
+        /* SECTION UTILS */
+        section { padding: 100px 0; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header span { color: var(--primary-blue); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; font-size: 0.9rem; }
+        .section-header h2 { font-size: 3rem; margin-top: 10px; color: var(--text-dark); }
+
+        /* 2. ABOUT US (The Signature) */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-text p { margin-bottom: 20px; font-size: 1.1rem; color: #444; }
+
+        /* 3. SERVICES (The Experience) */
+        .services { background: var(--white); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { padding: 40px; border: 1px solid #eee; transition: var(--transition); text-align: center; }
+        .service-card:hover { border-color: var(--accent-gold); transform: translateY(-10px); }
+        .service-card h3 { margin-bottom: 15px; font-size: 1.6rem; color: var(--primary-blue); }
+
+        /* 4. WHY US (The Piraeus Distinction) */
+        .advantages { background: var(--primary-blue); color: var(--white); }
+        .advantages .section-header h2 { color: var(--white); }
+        .advantages .section-header span { color: var(--accent-gold); }
+        .adv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; }
+        .adv-item h3 { color: var(--accent-gold); margin-bottom: 15px; font-size: 1.4rem; }
+        .adv-item p { font-weight: 300; opacity: 0.9; }
+
+        /* 5. OUR PROCESS (The Hospitality Standard) */
+        .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; }
+        .step { position: relative; }
+        .step-num { font-family: 'Playfair Display'; font-size: 4rem; color: #eee; position: absolute; top: -40px; left: 50%; transform: translateX(-50%); z-index: -1; }
+        .step h3 { font-size: 1.3rem; margin-bottom: 10px; }
+
+        /* 6. CONTACT FORM */
+        .contact-area { background: #f4f4f4; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 10px; letter-spacing: 1px; }
+        .form-control { width: 100%; padding: 15px; border: 1px solid #ccc; font-family: inherit; }
+        .btn-submit { padding: 15px 40px; background: var(--primary-blue); color: white; border: none; cursor: pointer; text-transform: uppercase; font-weight: 700; transition: var(--transition); }
+        .btn-submit:hover { background: var(--accent-gold); }
+
+        /* 7. FOOTER (Contacts) */
+        footer { padding: 80px 0 40px; background: #0a0a0a; color: #999; }
+        .footer-content { display: flex; justify-content: space-between; border-bottom: 1px solid #222; padding-bottom: 40px; margin-bottom: 40px; }
+        .footer-logo h2 { color: var(--white); font-size: 1.8rem; margin-bottom: 10px; }
+        .footer-info p { margin-bottom: 8px; }
+        .footer-info strong { color: var(--accent-gold); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+        .copyright { text-align: center; font-size: 0.75rem; }
+
+        @media (max-width: 768px) {
+            .about-grid, .adv-grid, .contact-grid, .process-steps { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content container">
+            <h1>Sophisticated Socializing</h1>
+            <p>Elevating the Piraeus Hospitality Experience</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span>The Identity</span>
+                <h2>The Heart of Greek Hospitality</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Located in the historic port city of Piraeus, Greece, GAMES AND MORE SINGLE MEMBER P.C. is a premier destination within the Accommodation and Food Services sector. Under the expert leadership of Key Principal Panagiotis Dionysios Tsioutsias, we have defined a new standard for social elegance.</p>
+                    <p>We specialize in the meticulous art of beverage service and social atmosphere, operating at the prestigious address of Gr.lampraki 104. Our establishment serves as a beacon for those seeking a refined environment where modern luxury meets traditional Mediterranean warmth.</p>
+                    <p>Our commitment to excellence is reflected in our professional administrative precision and our dedication to the Sterea Ellada and Evoia regional hospitality standards.</p>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1000" alt="Refined Lounge" style="width:100%; border: 1px solid var(--accent-gold); padding: 15px; background: white;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <span>Our Craft</span>
+                <h2>Immersive Social Solutions</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Elite Beverage Service</h3>
+                    <p>Specializing in the "Drinking Places (Alcoholic Beverages)" industry, we offer a curated selection of world-class spirits and bespoke cocktails in a sophisticated setting.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Gourmet Food Services</h3>
+                    <p>Integrated within the broader Food Services and Drinking Places sector, our culinary team provides dining experiences that harmonize perfectly with our elite beverage offerings.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Luxury Accommodation</h3>
+                    <p>As part of the comprehensive Accommodation and Food Services industry, we provide high-end social environments designed for the discerning Piraeus traveler.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages">
+        <div class="container">
+            <div class="section-header">
+                <span>Distinction</span>
+                <h2>The Games and More Advantage</h2>
+            </div>
+            <div class="adv-grid">
+                <div class="adv-item">
+                    <h3>Prime Piraeus Location</h3>
+                    <p>Our headquarters at Gr.lampraki 104, 18534, positions us at the epicenter of Greece's most vital maritime and hospitality hub.</p>
+                </div>
+                <div class="adv-item">
+                    <h3>Principal-Led Quality</h3>
+                    <p>Key Principal Panagiotis Dionysios Tsioutsias personally oversees the firm's operational integrity and commitment to guest satisfaction.</p>
+                </div>
+                <div class="adv-item">
+                    <h3>Regional Excellence</h3>
+                    <p>We leverage deep insights into the Sterea Ellada and Evoia markets to deliver authentic, high-value experiences that define the region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span>The Workflow</span>
+                <h2>The Greek Hospitality Standard</h2>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <span class="step-num">01</span>
+                    <h3>The Welcome</h3>
+                    <p>Every guest interaction begins with the signature Mediterranean warmth and professional efficiency that defines our brand.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">02</span>
+                    <h3>Bespoke Service</h3>
+                    <p>Our team executes every order according to rigorous Food and Beverage Service standards, ensuring a premium experience at every touchpoint.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">03</span>
+                    <h3>Continuing Connection</h3>
+                    <p>We ensure that every visit strengthens the lasting reputation of Games and More as Piraeus's premier social destination.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-area">
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <div class="section-header" style="text-align: left;">
+                        <span>Inquiries</span>
+                        <h2>Connect With Our Studio</h2>
+                    </div>
+                    <p>Reach out to our Piraeus headquarters to discuss private event bookings, hospitality consulting, or partnership opportunities within the Greek market.</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label>FULL NAME</label>
+                            <input type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label>BUSINESS EMAIL</label>
+                            <input type="email" class="form-control" placeholder="info@gamesmoresinglemember.pro">
+                        </div>
+                        <div class="form-group">
+                            <label>ENQUIRY BRIEF</label>
+                            <textarea class="form-control" rows="4" placeholder="How can we assist you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>GAMES AND MORE</h2>
+                    <p>The Signature of Piraeus Hospitality</p>
+                </div>
+                <div class="footer-info">
+                    <p><strong>Address:</strong> Gr.lampraki 104 18534, Piraeus, Sterea Ellada and Evoia, Greece</p>
+                    <p><strong>Primary Contact:</strong> info@gamesmoresinglemember.pro</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 GAMES AND MORE SINGLE MEMBER P.C. All Rights Reserved. Principal: Panagiotis Dionysios Tsioutsias.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
